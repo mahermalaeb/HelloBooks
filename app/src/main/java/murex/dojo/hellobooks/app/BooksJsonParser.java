@@ -21,7 +21,10 @@ public class BooksJsonParser {
             JSONObject volumeInfoObject = itemsJsonArray.getJSONObject(i).getJSONObject("volumeInfo");
             String bookTitle = volumeInfoObject.getString("title");
 
-            Book book = new Book(bookTitle);
+            JSONObject imageLinksObject =  volumeInfoObject.getJSONObject("imageLinks");
+            String imageUrl = imageLinksObject.getString("thumbnail");
+
+            Book book = new Book(bookTitle,imageUrl);
             booksListFromJson.add(book);
         }
         return booksListFromJson;

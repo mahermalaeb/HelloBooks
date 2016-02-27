@@ -70,12 +70,5 @@ public class MainActivity extends Activity {
         // Add the request to the RequestQueue.
         queue.add(stringRequest);
     }
-//
-//    public void fillBooksListWithDummyData() {
-//        Book newBook;
-//        for (int i = 0; i < 100; i++) {
-//            newBook = new Book("book");
-//            booksList.add(newBook);
-//        }
-//    }
+
 }

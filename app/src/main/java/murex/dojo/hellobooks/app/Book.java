@@ -3,8 +3,10 @@ package murex.dojo.hellobooks.app;
 
 public class Book {
     private String title;
+    private String imageURL;
 
-    public Book(String title) {
+    public Book(String imageURL, String title) {
+        this.imageURL = imageURL;
         this.title = title;
     }
 
