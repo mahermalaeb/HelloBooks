@@ -9,36 +9,65 @@ import com.android.volley.toolbox.Volley;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+
+import java.util.ArrayList;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
+
+   private RecyclerView mRecyclerView;
+   private RecyclerView.Adapter mAdapter;
+   private RecyclerView.LayoutManager mLayoutManager;
+   private ArrayList<Book> booksList = new ArrayList<Book>();
 
    @Override
    protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_main);
 
-      final TextView mTextView = (TextView) findViewById(R.id.message);
+      fillBooksListWithDummyData();
 
-      // Instantiate the RequestQueue.
-      RequestQueue queue = Volley.newRequestQueue(this);
-      String url ="https://www.googleapis.com/books/v1/volumes?q=java&key=AIzaSyBN8xJKNTqENR17M7uyAgBocqYHXY1eYi8";
+      mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
 
-      // Request a string response from the provided URL.
-      StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-        new Response.Listener<String>() {
+      // use a linear layout manager
+      mLayoutManager = new LinearLayoutManager(this);
+      mRecyclerView.setLayoutManager(mLayoutManager);
+
+      // specify an adapter (see also next example)
+      mAdapter = new BooksAdapter(booksList);
+      mRecyclerView.setAdapter(mAdapter);
+
+       final TextView mTextView = (TextView) findViewById(R.id.message);
+
+       // Instantiate the RequestQueue.
+       RequestQueue queue = Volley.newRequestQueue(this);
+       String url ="https://www.googleapis.com/books/v1/volumes?q=java&key=AIzaSyBN8xJKNTqENR17M7uyAgBocqYHXY1eYi8";
+
+       // Request a string response from the provided URL.
+       StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+               new Response.Listener<String>() {
+                   @Override
+                   public void onResponse(String response) {
+                       // Display the first 500 characters of the response string.
+                       mTextView.setText("Response is: "+ response.substring(0,500));
+                   }
+               }, new Response.ErrorListener() {
            @Override
-           public void onResponse(String response) {
-              // Display the first 500 characters of the response string.
-              mTextView.setText("Response is: "+ response.substring(0,500));
+           public void onErrorResponse(VolleyError error) {
+               mTextView.setText(error.toString());
            }
-        }, new Response.ErrorListener() {
-         @Override
-         public void onErrorResponse(VolleyError error) {
-            mTextView.setText(error.toString());
-         }
-      });
-      // Add the request to the RequestQueue.
-      queue.add(stringRequest);
+       });
+       // Add the request to the RequestQueue.
+       queue.add(stringRequest);
+
    }
+
+   public void fillBooksListWithDummyData(){
+      Book newBook;
+      for(int i=0; i<100;i++){
+         newBook = new Book ("book");
+         booksList.add(newBook);
+      }
 }
