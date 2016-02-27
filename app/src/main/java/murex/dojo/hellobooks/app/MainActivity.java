@@ -53,7 +53,7 @@ public class MainActivity extends Activity {
                         try {
 
                             booksList = BooksJsonParser.parseJsonStringIntoBooksList(response);
-                            mAdapter = new BooksAdapter(booksList);
+                            mAdapter = new BooksAdapter(booksList,getApplicationContext());
                             mRecyclerView.setAdapter(mAdapter);
 
                         } catch (JSONException e) {
