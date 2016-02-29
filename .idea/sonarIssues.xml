@@ -13,6 +13,86 @@
             <set />
           </value>
         </entry>
+        <entry key="/fragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-server/src/main/java/murex/imdb/server/jdbc/server/DefaultOptimizationsFactory.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-server/src/test/java/murex/imdb/server/jdbc/server/DefaultOptimizationsFactoryTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-server/src/test/java/murex/imdb/server/queries/executors/OptimizerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-server/src/test/resources/murex/imdb/server/features/optimizations/JoinReduce.feature">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-shared/src/main/java/PlanPicker.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-shared/src/main/java/murex/imdb/shared/jdbc/rpc/JdbcConnectionHandler.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-shared/src/main/java/murex/imdb/shared/query/formal/optimizations/JoinReduceRewriting.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-shared/src/main/java/murex/imdb/shared/query/formal/optimizations/LeftDeepReordering.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-shared/src/main/java/murex/imdb/shared/query/formal/optimizations/PlanPicker.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-shared/src/main/java/murex/imdb/shared/query/formal/optimizations/statistics/InputJoinStats.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-shared/src/main/java/murex/imdb/shared/query/formal/optimizations/statistics/PlanPicker.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-shared/src/test/java/murex/imdb/shared/query/formal/optimizations/JoinReduceRewritingTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-shared/src/test/java/murex/imdb/shared/query/formal/optimizations/LeftDeepReorderingTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-shared/src/test/java/murex/imdb/shared/query/formal/optimizations/PlanPickerBuilder.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-shared/src/test/java/murex/imdb/shared/query/formal/optimizations/statistics/InputJoinStatsTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/build.gradle">
           <value>
             <set />
@@ -23,7 +103,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/murex/dojo/hellobooks/app/BirthProvider.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/murex/dojo/hellobooks/app/BookDetails.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/murex/dojo/hellobooks/app/BooksAdapter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/murex/dojo/hellobooks/app/MainActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/activity_book_details.xml">
           <value>
             <set />
           </value>
