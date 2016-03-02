@@ -22,7 +22,7 @@
                 android:name=".BookDetails"
                 android:label="@string/title_activity_book_details">
         </activity>
-        <provider android:name="BirthProvider"
+        <provider android:name=".BookProvider"
                   android:authorities="murex.dojo.hellobooks.app">
         </provider>
 

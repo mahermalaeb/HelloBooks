@@ -29,7 +29,7 @@ public class BookDetails extends Activity implements View.OnClickListener {
       showAll.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View view) {
-            showAllBirthdays(view);
+            showAllBooks(view);
          }
       });
    }
@@ -37,42 +37,37 @@ public class BookDetails extends Activity implements View.OnClickListener {
 
    @Override
    public void onClick(View view) {
-      addBirthday(view);
+      addBook(view);
       Intent intent = new Intent();
-      intent.setAction("murex.dojo.hellobooks.app..LIKE_INTENT");
+      intent.setAction("murex.dojo.hellobooks.app.LIKE_INTENT");
       sendBroadcast(intent);
    }
 
-   public void addBirthday(View view) {
-      // Add a new birthday record
+   public void addBook(View view) {
       ContentValues values = new ContentValues();
 
-      values.put(BirthProvider.NAME, "Maher");
+      values.put(BookProvider.NAME, "Maher");
 
-      values.put(BirthProvider.BIRTHDAY, "January");
+      values.put(BookProvider.BIRTHDAY, "January");
 
       Uri uri = getContentResolver().insert(
-        BirthProvider.CONTENT_URI, values);
+        BookProvider.CONTENT_URI, values);
 
-      Toast.makeText(getBaseContext(),
-        "Javacodegeeks: " + uri.toString() + " inserted!", Toast.LENGTH_LONG).show();
+      Toast.makeText(getBaseContext(), uri.toString() + " inserted!", Toast.LENGTH_LONG).show();
    }
 
 
-   public void showAllBirthdays(View view) {
-      // Show all the birthdays sorted by friend's name
-      String URL = "content://murex.dojo.hellobooks.app/friends";
-      Uri friends = Uri.parse(URL);
+   public void showAllBooks(View view) {
+      Uri friends = Uri.parse(BookProvider.URL);
       Cursor c = getContentResolver().query(friends, null, null, null, "name");
-      String result = "Javacodegeeks Results:";
+      String result = "";
 
       if (!c.moveToFirst()) {
          Toast.makeText(this, result + " no content yet!", Toast.LENGTH_LONG).show();
       } else {
          do {
-            result = result + "\n" + c.getString(c.getColumnIndex(BirthProvider.NAME)) +
-              " with id " + c.getString(c.getColumnIndex(BirthProvider.ID)) +
-              " has birthday: " + c.getString(c.getColumnIndex(BirthProvider.BIRTHDAY));
+            result = result + "\n" + c.getString(c.getColumnIndex(BookProvider.NAME)) +
+              " with id " + c.getString(c.getColumnIndex(BookProvider.ID));
          } while (c.moveToNext());
          Toast.makeText(this, result, Toast.LENGTH_LONG).show();
       }

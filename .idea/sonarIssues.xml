@@ -113,6 +113,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/murex/dojo/hellobooks/app/BookProvider.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/murex/dojo/hellobooks/app/BooksAdapter.java">
           <value>
             <set />
