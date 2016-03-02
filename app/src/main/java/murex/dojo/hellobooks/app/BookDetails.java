@@ -37,14 +37,6 @@ public class BookDetails extends Activity {
             broadcastLike();
          }
       });
-
-      final Button showAll = (Button) findViewById(R.id.likesButton);
-      showAll.setOnClickListener(new View.OnClickListener() {
-         @Override
-         public void onClick(View view) {
-            showAllBooks(view);
-         }
-      });
    }
 
    private void broadcastLike() {
@@ -57,11 +49,9 @@ public class BookDetails extends Activity {
    public void insertBook() {
       ContentValues values = new ContentValues();
       final String bookName = getIntent().getStringExtra(NAME);
-
       values.put(NAME, bookName);
 
       Uri uri = getContentResolver().insert(CONTENT_URI, values);
-
       Toast.makeText(getBaseContext(), bookName + " " + uri.toString() + " inserted!", LENGTH_LONG).show();
    }
 
@@ -75,13 +65,14 @@ public class BookDetails extends Activity {
          Toast.makeText(this, result + " no content yet!", LENGTH_LONG).show();
       } else {
          do {
-            result = result + "\n" +
-              " with id " + c.getString(c.getColumnIndex(BookProvider.ID));
+            result = result + "\n" + " id " + c.getString(c.getColumnIndex(BookProvider.ID)) + ", name " + c.getString(c.getColumnIndex(BookProvider.NAME));
          } while (c.moveToNext());
          Toast.makeText(this, result, LENGTH_LONG).show();
       }
 
    }
 
-
+   public void close(View view) {
+      this.finish();
+   }
 }
