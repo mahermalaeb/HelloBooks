@@ -1,12 +1,13 @@
 package murex.dojo.hellobooks.app;
 
 import static android.widget.Toast.LENGTH_LONG;
-import static murex.dojo.hellobooks.app.BookProvider.CONTENT_URI;
 import static murex.dojo.hellobooks.app.BookProvider.NAME;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Observer;
+
 import android.app.Activity;
-import android.content.ContentValues;
-import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -19,11 +20,15 @@ import android.widget.Toast;
 public class BookDetails extends Activity {
 
    public static final String LIKE_BROADCAST = "murex.dojo.hellobooks.app.LIKE_INTENT";
+   public List<Observer> observers = new ArrayList<Observer>();
 
    @Override
    protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_book_details);
+
+      observers.add(new BroacastObserver(this));
+      observers.add(new LikeObserver(this));
 
       final String details = getIntent().getStringExtra(NAME);
       final TextView message = (TextView) findViewById(R.id.message);
@@ -33,28 +38,17 @@ public class BookDetails extends Activity {
       likeButton.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View view) {
-            insertBook();
-            broadcastLike();
+            update();
          }
       });
    }
 
-   private void broadcastLike() {
-      Intent intent = new Intent();
-      intent.setAction(LIKE_BROADCAST);
-      sendBroadcast(intent);
-   }
-
-
-   public void insertBook() {
-      ContentValues values = new ContentValues();
+   private void update() {
       final String bookName = getIntent().getStringExtra(NAME);
-      values.put(NAME, bookName);
-
-      Uri uri = getContentResolver().insert(CONTENT_URI, values);
-      Toast.makeText(getBaseContext(), bookName + " " + uri.toString() + " inserted!", LENGTH_LONG).show();
+      for (Observer observer : observers) {
+         observer.update(null, bookName);
+      }
    }
-
 
    public void showAllBooks(View view) {
       Uri friends = Uri.parse(BookProvider.URL);

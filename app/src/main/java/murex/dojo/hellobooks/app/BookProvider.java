@@ -12,18 +12,15 @@ import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 
 public class BookProvider extends ContentProvider {
-   // fields for my content provider
    static final String PROVIDER_NAME = "murex.dojo.hellobooks.app";
    static final String URL = "content://" + PROVIDER_NAME + "/friends";
    static final Uri CONTENT_URI = Uri.parse(URL);
 
-   // fields for the database
    static final String ID = "id";
    static final String NAME = "name";
 
    DBHelper dbHelper;
 
-   // database declarations
    private SQLiteDatabase database;
    static final String DATABASE_NAME = "app";
    static final String TABLE_NAME = "friends";
@@ -33,24 +30,6 @@ public class BookProvider extends ContentProvider {
        " (id INTEGER PRIMARY KEY AUTOINCREMENT, " +
        " name TEXT NOT NULL);";
 
-
-   // class that creates and manages the provider's database
-   private static class DBHelper extends SQLiteOpenHelper {
-
-      public DBHelper(Context context) {
-         super(context, DATABASE_NAME, null, DATABASE_VERSION);
-      }
-
-      @Override
-      public void onCreate(SQLiteDatabase db) {
-         db.execSQL(CREATE_TABLE);
-      }
-
-      @Override
-      public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-         throw new UnsupportedOperationException("onUpgrade not supported");
-      }
-   }
 
    @Override
    public boolean onCreate() {
@@ -63,20 +42,13 @@ public class BookProvider extends ContentProvider {
    }
 
    @Override
-   public Cursor query(Uri uri, String[] projection, String selection,
-                       String[] selectionArgs, String sortOrder) {
-      // TODO Auto-generated method stub
+   public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
+
       SQLiteQueryBuilder queryBuilder = new SQLiteQueryBuilder();
-      // the TABLE_NAME to query on
       queryBuilder.setTables(TABLE_NAME);
 
-      Cursor cursor = queryBuilder.query(database, projection, selection,
-        selectionArgs, null, null, sortOrder);
-      /**
-       * register to watch a content URI for changes
-       */
+      Cursor cursor = queryBuilder.query(database, projection, selection, selectionArgs, null, null, sortOrder);
       cursor.setNotificationUri(getContext().getContentResolver(), uri);
-
       return cursor;
    }
 
@@ -94,8 +66,7 @@ public class BookProvider extends ContentProvider {
    }
 
    @Override
-   public int update(Uri uri, ContentValues values, String selection,
-                     String[] selectionArgs) {
+   public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
       throw new UnsupportedOperationException("Update not supported");
    }
 
@@ -108,6 +79,23 @@ public class BookProvider extends ContentProvider {
    @Override
    public String getType(Uri uri) {
       throw new UnsupportedOperationException("GetType not supported");
+   }
+
+   private static class DBHelper extends SQLiteOpenHelper {
+
+      public DBHelper(Context context) {
+         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+      }
+
+      @Override
+      public void onCreate(SQLiteDatabase db) {
+         db.execSQL(CREATE_TABLE);
+      }
+
+      @Override
+      public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+         throw new UnsupportedOperationException("onUpgrade not supported");
+      }
    }
 
 
