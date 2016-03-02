@@ -1,5 +1,7 @@
 package murex.dojo.hellobooks.app;
 
+import static murex.dojo.hellobooks.app.Constants.*;
+
 import android.content.ContentProvider;
 import android.content.ContentUris;
 import android.content.ContentValues;
@@ -12,23 +14,10 @@ import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 
 public class BookProvider extends ContentProvider {
-   static final String PROVIDER_NAME = "murex.dojo.hellobooks.app";
-   static final String URL = "content://" + PROVIDER_NAME + "/friends";
-   static final Uri CONTENT_URI = Uri.parse(URL);
-
-   static final String ID = "id";
-   static final String NAME = "name";
 
    DBHelper dbHelper;
 
    private SQLiteDatabase database;
-   static final String DATABASE_NAME = "app";
-   static final String TABLE_NAME = "friends";
-   static final int DATABASE_VERSION = 1;
-   static final String CREATE_TABLE =
-     " CREATE TABLE " + TABLE_NAME +
-       " (id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-       " name TEXT NOT NULL);";
 
 
    @Override

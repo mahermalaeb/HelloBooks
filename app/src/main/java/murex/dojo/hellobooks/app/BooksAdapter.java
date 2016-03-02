@@ -1,6 +1,6 @@
 package murex.dojo.hellobooks.app;
 
-import static murex.dojo.hellobooks.app.BookProvider.NAME;
+import static murex.dojo.hellobooks.app.Constants.NAME;
 
 import java.util.ArrayList;
 

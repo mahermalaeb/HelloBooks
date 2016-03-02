@@ -1,8 +1,8 @@
 package murex.dojo.hellobooks.app;
 
 import static android.widget.Toast.LENGTH_LONG;
-import static murex.dojo.hellobooks.app.BookProvider.CONTENT_URI;
-import static murex.dojo.hellobooks.app.BookProvider.NAME;
+import static murex.dojo.hellobooks.app.Constants.CONTENT_URI;
+import static murex.dojo.hellobooks.app.Constants.NAME;
 
 import java.util.Observable;
 import java.util.Observer;

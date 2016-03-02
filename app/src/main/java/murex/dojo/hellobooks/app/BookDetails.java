@@ -1,7 +1,8 @@
 package murex.dojo.hellobooks.app;
 
 import static android.widget.Toast.LENGTH_LONG;
-import static murex.dojo.hellobooks.app.BookProvider.NAME;
+import static murex.dojo.hellobooks.app.Constants.*;
+import static murex.dojo.hellobooks.app.Constants.NAME;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,8 +20,7 @@ import android.widget.Toast;
 
 public class BookDetails extends Activity {
 
-   public static final String LIKE_BROADCAST = "murex.dojo.hellobooks.app.LIKE_INTENT";
-   public List<Observer> observers = new ArrayList<Observer>();
+   private List<Observer> observers = new ArrayList<Observer>();
 
    @Override
    protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,7 @@ public class BookDetails extends Activity {
    }
 
    public void showAllBooks(View view) {
-      Uri friends = Uri.parse(BookProvider.URL);
+      Uri friends = Uri.parse(URL);
       Cursor c = getContentResolver().query(friends, null, null, null, null);
       String result = "";
 
@@ -59,7 +59,7 @@ public class BookDetails extends Activity {
          Toast.makeText(this, result + " no content yet!", LENGTH_LONG).show();
       } else {
          do {
-            result = result + "\n" + " id " + c.getString(c.getColumnIndex(BookProvider.ID)) + ", name " + c.getString(c.getColumnIndex(BookProvider.NAME));
+            result = result + "\n" + " id " + c.getString(c.getColumnIndex(ID)) + ", name " + c.getString(c.getColumnIndex(NAME));
          } while (c.moveToNext());
          Toast.makeText(this, result, LENGTH_LONG).show();
       }

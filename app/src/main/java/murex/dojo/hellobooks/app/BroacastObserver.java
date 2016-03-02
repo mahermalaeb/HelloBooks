@@ -1,6 +1,6 @@
 package murex.dojo.hellobooks.app;
 
-import static murex.dojo.hellobooks.app.BookProvider.NAME;
+import static murex.dojo.hellobooks.app.Constants.NAME;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -18,7 +18,7 @@ public class BroacastObserver implements Observer {
    @Override
    public void update(Observable observable, Object bookName) {
       Intent intent = new Intent();
-      intent.setAction(BookDetails.LIKE_BROADCAST);
+      intent.setAction(Constants.LIKE_BROADCAST);
       intent.putExtra(NAME, (String) bookName);
       context.sendBroadcast(intent);
    }
