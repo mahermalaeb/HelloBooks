@@ -1,5 +1,7 @@
 package murex.dojo.hellobooks.app;
 
+import static murex.dojo.hellobooks.app.BookProvider.NAME;
+
 import java.util.ArrayList;
 
 import com.bumptech.glide.Glide;
@@ -23,36 +25,19 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder> 
    @Override
    public void onClick(View view) {
       int itemPosition = mRecyclerView.getChildPosition(view);
-      String bookDetails = booksList.get(itemPosition).getTitle();
+      String bookName = booksList.get(itemPosition).getTitle();
       final Intent detailsIntent = new Intent(context, BookDetails.class);
       detailsIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-      detailsIntent.putExtra("details", bookDetails);
+      detailsIntent.putExtra(NAME, bookName);
       context.startActivity(detailsIntent);
    }
 
-   //The Class that will handle the itemView
-   public static class ViewHolder extends RecyclerView.ViewHolder {
-
-      //List all the views of the item view
-      public TextView titleTextView;
-      public ImageView thumbnailImageView;
-
-      public ViewHolder(View itemView) {
-         super(itemView);
-
-         //Cast each item to its type after finding it by ID
-         titleTextView = (TextView) itemView.findViewById(R.id.book_title_text_view);
-         thumbnailImageView = (ImageView) itemView.findViewById(R.id.book_thumbnail_image_view);
-      }
-   }
-
-
-   //Takes the data we want to display in the main activity
    public BooksAdapter(ArrayList<Book> myBooksList, Context context, RecyclerView mRecyclerView) {
       booksList = myBooksList;
       this.context = context;
       this.mRecyclerView = mRecyclerView;
    }
+
 
    // Inflate the item view
    @Override
@@ -66,7 +51,6 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder> 
       return new ViewHolder(v);
    }
 
-
    // Set the content of each item view from our data
    @Override
    public void onBindViewHolder(BooksAdapter.ViewHolder holder, int position) {
@@ -76,9 +60,24 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder> 
       Glide.with(context).load(booksList.get(position).getImageUrl()).into(holder.thumbnailImageView);
    }
 
+
    // Return the size of your dataset (invoked by the layout manager)
    @Override
    public int getItemCount() {
       return booksList.size();
+   }
+
+   //The Class that will handle the itemView
+   public static class ViewHolder extends RecyclerView.ViewHolder {
+
+      public TextView titleTextView;
+      public ImageView thumbnailImageView;
+
+      public ViewHolder(View itemView) {
+         super(itemView);
+
+         titleTextView = (TextView) itemView.findViewById(R.id.book_title_text_view);
+         thumbnailImageView = (ImageView) itemView.findViewById(R.id.book_thumbnail_image_view);
+      }
    }
 }

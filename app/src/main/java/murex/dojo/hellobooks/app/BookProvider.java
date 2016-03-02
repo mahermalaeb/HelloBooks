@@ -50,7 +50,6 @@ public class BookProvider extends ContentProvider {
       public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
          throw new UnsupportedOperationException("onUpgrade not supported");
       }
-
    }
 
    @Override

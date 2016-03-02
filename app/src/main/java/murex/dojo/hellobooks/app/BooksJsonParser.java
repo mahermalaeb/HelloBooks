@@ -1,16 +1,12 @@
 package murex.dojo.hellobooks.app;
 
-import android.util.Log;
+import java.util.ArrayList;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
 
-/**
- * Created by User on 2/27/2016.
- */
 public class BooksJsonParser {
 
     public static ArrayList<Book> parseJsonStringIntoBooksList(String jsonString) throws JSONException {

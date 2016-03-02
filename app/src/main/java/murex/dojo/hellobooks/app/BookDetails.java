@@ -1,5 +1,9 @@
 package murex.dojo.hellobooks.app;
 
+import static android.widget.Toast.LENGTH_LONG;
+import static murex.dojo.hellobooks.app.BookProvider.CONTENT_URI;
+import static murex.dojo.hellobooks.app.BookProvider.NAME;
+
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
@@ -12,18 +16,27 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class BookDetails extends Activity implements View.OnClickListener {
+public class BookDetails extends Activity {
+
+   public static final String LIKE_BROADCAST = "murex.dojo.hellobooks.app.LIKE_INTENT";
 
    @Override
    protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_book_details);
-      final String details = getIntent().getStringExtra("details");
+
+      final String details = getIntent().getStringExtra(NAME);
       final TextView message = (TextView) findViewById(R.id.message);
       message.setText(details);
 
       final Button likeButton = (Button) findViewById(R.id.likeButton);
-      likeButton.setOnClickListener(this);
+      likeButton.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View view) {
+            insertBook();
+            broadcastLike();
+         }
+      });
 
       final Button showAll = (Button) findViewById(R.id.likesButton);
       showAll.setOnClickListener(new View.OnClickListener() {
@@ -34,24 +47,22 @@ public class BookDetails extends Activity implements View.OnClickListener {
       });
    }
 
-
-   @Override
-   public void onClick(View view) {
-      addBook(view);
+   private void broadcastLike() {
       Intent intent = new Intent();
-      intent.setAction("murex.dojo.hellobooks.app.LIKE_INTENT");
+      intent.setAction(LIKE_BROADCAST);
       sendBroadcast(intent);
    }
 
-   public void addBook(View view) {
+
+   public void insertBook() {
       ContentValues values = new ContentValues();
+      final String bookName = getIntent().getStringExtra(NAME);
 
-      values.put(BookProvider.NAME, "January");
+      values.put(NAME, bookName);
 
-      Uri uri = getContentResolver().insert(
-        BookProvider.CONTENT_URI, values);
+      Uri uri = getContentResolver().insert(CONTENT_URI, values);
 
-      Toast.makeText(getBaseContext(), uri.toString() + " inserted!", Toast.LENGTH_LONG).show();
+      Toast.makeText(getBaseContext(), bookName + " " + uri.toString() + " inserted!", LENGTH_LONG).show();
    }
 
 
@@ -61,13 +72,13 @@ public class BookDetails extends Activity implements View.OnClickListener {
       String result = "";
 
       if (!c.moveToFirst()) {
-         Toast.makeText(this, result + " no content yet!", Toast.LENGTH_LONG).show();
+         Toast.makeText(this, result + " no content yet!", LENGTH_LONG).show();
       } else {
          do {
             result = result + "\n" +
               " with id " + c.getString(c.getColumnIndex(BookProvider.ID));
          } while (c.moveToNext());
-         Toast.makeText(this, result, Toast.LENGTH_LONG).show();
+         Toast.makeText(this, result, LENGTH_LONG).show();
       }
 
    }
