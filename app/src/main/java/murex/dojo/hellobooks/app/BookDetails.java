@@ -46,9 +46,7 @@ public class BookDetails extends Activity implements View.OnClickListener {
    public void addBook(View view) {
       ContentValues values = new ContentValues();
 
-      values.put(BookProvider.NAME, "Maher");
-
-      values.put(BookProvider.BIRTHDAY, "January");
+      values.put(BookProvider.NAME, "January");
 
       Uri uri = getContentResolver().insert(
         BookProvider.CONTENT_URI, values);
@@ -59,14 +57,14 @@ public class BookDetails extends Activity implements View.OnClickListener {
 
    public void showAllBooks(View view) {
       Uri friends = Uri.parse(BookProvider.URL);
-      Cursor c = getContentResolver().query(friends, null, null, null, "name");
+      Cursor c = getContentResolver().query(friends, null, null, null, null);
       String result = "";
 
       if (!c.moveToFirst()) {
          Toast.makeText(this, result + " no content yet!", Toast.LENGTH_LONG).show();
       } else {
          do {
-            result = result + "\n" + c.getString(c.getColumnIndex(BookProvider.NAME)) +
+            result = result + "\n" +
               " with id " + c.getString(c.getColumnIndex(BookProvider.ID));
          } while (c.moveToNext());
          Toast.makeText(this, result, Toast.LENGTH_LONG).show();

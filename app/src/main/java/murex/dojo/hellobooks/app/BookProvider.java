@@ -20,20 +20,18 @@ public class BookProvider extends ContentProvider {
    // fields for the database
    static final String ID = "id";
    static final String NAME = "name";
-   static final String BIRTHDAY = "birthday";
 
    DBHelper dbHelper;
 
    // database declarations
    private SQLiteDatabase database;
-   static final String DATABASE_NAME = "BirthdayReminder";
-   static final String TABLE_NAME = "birthTable";
+   static final String DATABASE_NAME = "app";
+   static final String TABLE_NAME = "friends";
    static final int DATABASE_VERSION = 1;
    static final String CREATE_TABLE =
      " CREATE TABLE " + TABLE_NAME +
        " (id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-       " name TEXT NOT NULL, " +
-       " birthday TEXT NOT NULL);";
+       " name TEXT NOT NULL);";
 
 
    // class that creates and manages the provider's database
