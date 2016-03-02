@@ -25,7 +25,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder> 
    @Override
    public void onClick(View view) {
       int itemPosition = mRecyclerView.getChildPosition(view);
-      String bookName = booksList.get(itemPosition).getTitle();
+      String bookName = booksList.get(itemPosition).title();
       final Intent detailsIntent = new Intent(context, BookDetails.class);
       detailsIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
       detailsIntent.putExtra(NAME, bookName);
@@ -56,8 +56,8 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder> 
    public void onBindViewHolder(BooksAdapter.ViewHolder holder, int position) {
       // - get element from your dataset at this position
       // - replace the contents of the view with that element
-      holder.titleTextView.setText(booksList.get(position).getTitle());
-      Glide.with(context).load(booksList.get(position).getImageUrl()).into(holder.thumbnailImageView);
+      holder.titleTextView.setText(booksList.get(position).title());
+      Glide.with(context).load(booksList.get(position).imageUrl()).into(holder.thumbnailImageView);
    }
 
 

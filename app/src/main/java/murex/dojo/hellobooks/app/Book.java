@@ -10,11 +10,11 @@ public class Book {
         this.title = title;
     }
 
-    public String getTitle() {
+    public String title() {
         return title;
     }
 
-    public String getImageUrl() {
+    public String imageUrl() {
         return imageUrl;
     }
 }
