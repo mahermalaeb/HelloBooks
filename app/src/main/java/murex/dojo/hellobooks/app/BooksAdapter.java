@@ -26,6 +26,10 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder> 
    public void onClick(View view) {
       int itemPosition = mRecyclerView.getChildPosition(view);
       String bookName = booksList.get(itemPosition).title();
+      showBookDetails(bookName);
+   }
+
+   private void showBookDetails(String bookName) {
       final Intent detailsIntent = new Intent(context, BookDetails.class);
       detailsIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
       detailsIntent.putExtra(NAME, bookName);
@@ -33,41 +37,30 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder> 
    }
 
    public BooksAdapter(ArrayList<Book> myBooksList, Context context, RecyclerView mRecyclerView) {
-      booksList = myBooksList;
+      this.booksList = myBooksList;
       this.context = context;
       this.mRecyclerView = mRecyclerView;
    }
 
-
-   // Inflate the item view
    @Override
-   public BooksAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
-                                                     int viewType) {
-      // create a new view
-      final View v = LayoutInflater.from(parent.getContext())
-        .inflate(R.layout.books_list_item, parent, false);
-      v.setOnClickListener(this);
+   public BooksAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+      final View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.books_list_item, parent, false);
 
+      v.setOnClickListener(this);
       return new ViewHolder(v);
    }
 
-   // Set the content of each item view from our data
    @Override
    public void onBindViewHolder(BooksAdapter.ViewHolder holder, int position) {
-      // - get element from your dataset at this position
-      // - replace the contents of the view with that element
       holder.titleTextView.setText(booksList.get(position).title());
       Glide.with(context).load(booksList.get(position).imageUrl()).into(holder.thumbnailImageView);
    }
 
-
-   // Return the size of your dataset (invoked by the layout manager)
    @Override
    public int getItemCount() {
       return booksList.size();
    }
 
-   //The Class that will handle the itemView
    public static class ViewHolder extends RecyclerView.ViewHolder {
 
       public TextView titleTextView;
