@@ -56,8 +56,7 @@ public class BookDetails extends Activity {
    }
 
    public void showAllBooks(View view) {
-      Uri friends = Uri.parse(URL);
-      Cursor c = getContentResolver().query(friends, null, null, null, null);
+      Cursor c = getContentResolver().query(Uri.parse(URL), null, null, null, null);
       String result = "";
 
       if (!c.moveToFirst()) {

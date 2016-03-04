@@ -12,6 +12,7 @@ import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.ProgressBar;
 
 public class MainActivity extends Activity implements MyResultReceiver.Receiver {
 
@@ -48,35 +49,37 @@ public class MainActivity extends Activity implements MyResultReceiver.Receiver 
       mAdapter = new BooksAdapter(booksList, getApplicationContext(), mRecyclerView);
       mRecyclerView.setAdapter(mAdapter);
 
-      String url = "https://www.googleapis.com/books/v1/volumes?q=java&key=AIzaSyBN8xJKNTqENR17M7uyAgBocqYHXY1eYi8";
-      //        // Request a string response from the provided URL.
-      //        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-      //                new Response.Listener<String>() {
-      //                    @Override
-      //                    public void onResponse(String response) {
-      //                        try {
-      //                            booksList = BooksJsonParser.parseJsonStringIntoBooksList(response);
-      //                            mAdapter = new BooksAdapter(booksList,getApplicationContext());
-      //                            mRecyclerView.setAdapter(mAdapter);
+      //      String url = BOOKS_URL;
+      //              // Request a string response from the provided URL.
+      //              StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+      //                      new Response.Listener<String>() {
+      //                          @Override
+      //                          public void onResponse(String response) {
+      //                              try {
+      //                                  booksList = BooksJsonParser.parseJsonStringIntoBooksList(response);
+      //                                  mAdapter = new BooksAdapter(booksList,getApplicationContext(),mRecyclerView);
+      //                                  mRecyclerView.setAdapter(mAdapter);
       //
-      //                        } catch (JSONException e) {
-      //                            e.printStackTrace();
-      //                        }
-      //                    }
-      //                }, new Response.ErrorListener() {
-      //            @Override
-      //            public void onErrorResponse(VolleyError error) {
+      //                              } catch (JSONException e) {
+      //                                  e.printStackTrace();
+      //                              }
+      //                          }
+      //                      }, new Response.ErrorListener() {
+      //                  @Override
+      //                  public void onErrorResponse(VolleyError error) {
+      //                     Log.d("error",error.getMessage());
+      //                  }
       //
-      //            }
-      //
-      //        });
-      //        // Add the request to the RequestQueue.
-      //        queue.add(stringRequest);
+      //              });
+      //              // Add the request to the RequestQueue.
+      //              queue.add(stringRequest);
    }
 
 
    @Override
    public void onReceiveResult(int resultCode, Bundle resultData) {
+      final ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar);
+      bar.setProgress(Integer.valueOf(resultData.getString("ServiceTag")));
       Log.d("got", "received result from Service=" + resultData.getString("ServiceTag"));
    }
 }
