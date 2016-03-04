@@ -21,13 +21,13 @@ public class TimerService extends IntentService {
       final ResultReceiver rec = intent.getParcelableExtra(RECEIVER_TAG);
 
       new Thread() {
-         int i;
+         int seconds;
 
          @Override
          public void run() {
-            while (true) {
+            while (seconds < 100) {
                Bundle b = new Bundle();
-               b.putString(SERVICE_TAG, String.valueOf(i++));
+               b.putString(SERVICE_TAG, String.valueOf(seconds++));
                rec.send(0, b);
                try {
                   sleep(1000);

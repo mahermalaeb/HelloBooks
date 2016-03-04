@@ -3,10 +3,10 @@ package murex.dojo.hellobooks.app;
 import static murex.dojo.hellobooks.app.Constants.BOOKS_FETCHED_RESULT_CODE;
 import static murex.dojo.hellobooks.app.Constants.DEFAULT_RESULT_CODE;
 import static murex.dojo.hellobooks.app.Constants.RECEIVER_TAG;
+import static murex.dojo.hellobooks.app.Constants.SERVICE_TAG;
+import static murex.dojo.hellobooks.providers.BooksProvider.booksProvider;
 
 import java.util.List;
-
-import murex.dojo.hellobooks.providers.BooksProvider;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -19,7 +19,7 @@ import android.widget.ProgressBar;
 
 public class MainActivity extends Activity implements MyResultReceiver.Receiver {
 
-   public static boolean PROXY_ENABLED = true;
+   public static boolean PROXY_ENABLED = false;
    RecyclerView mRecyclerView;
 
    @Override
@@ -35,15 +35,15 @@ public class MainActivity extends Activity implements MyResultReceiver.Receiver 
       MyResultReceiver mReceiver = new MyResultReceiver(new Handler());
       mReceiver.setReceiver(this);
 
-      Intent i = new Intent(this, TimerService.class);
-      i.putExtra(RECEIVER_TAG, mReceiver);
-      startService(i);
+      Intent timerIntent = new Intent(this, TimerService.class);
+      timerIntent.putExtra(RECEIVER_TAG, mReceiver);
+      startService(timerIntent);
    }
 
    private void setupRecyclerView() {
       mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
       mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-      BooksProvider.booksProvider(this).fetchBooks();
+      booksProvider(this).fetchBooks();
    }
 
    @Override
@@ -55,7 +55,7 @@ public class MainActivity extends Activity implements MyResultReceiver.Receiver 
          break;
       case DEFAULT_RESULT_CODE:
          final ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar);
-         bar.setProgress(Integer.valueOf(((Bundle) resultData).getString("ServiceTag")));
+         bar.setProgress(Integer.valueOf(((Bundle) resultData).getString(SERVICE_TAG)));
          break;
       }
    }
