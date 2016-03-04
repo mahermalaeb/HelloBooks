@@ -10,6 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Observer;
 
+import murex.dojo.hellobooks.observers.BroadcastObserver;
+import murex.dojo.hellobooks.observers.LikeObserver;
+
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -34,6 +37,7 @@ public class BookDetails extends Activity {
       final String bookName = getIntent().getStringExtra(NAME);
 
       setContentView(R.layout.activity_book_details);
+
       likeBroadcastReceiver = new BroadcastReceiver() {
          @Override
          public void onReceive(Context context, Intent intent) {
@@ -41,7 +45,8 @@ public class BookDetails extends Activity {
          }
       };
       registerReceiver(likeBroadcastReceiver, new IntentFilter(LIKE_BROADCAST));
-      observers.add(new BroacastObserver(this));
+
+      observers.add(new BroadcastObserver(this));
       observers.add(new LikeObserver(this));
 
       final TextView message = (TextView) findViewById(R.id.message);

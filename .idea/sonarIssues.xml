@@ -143,6 +143,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/murex/dojo/hellobooks/app/BroadcastObserver.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/murex/dojo/hellobooks/app/Constants.java">
           <value>
             <set />
@@ -174,6 +179,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/murex/dojo/hellobooks/app/TimerService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/murex/dojo/hellobooks/gui/MyResultreceiver.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/murex/dojo/hellobooks/observers/BroadcastObserver.java">
           <value>
             <set />
           </value>

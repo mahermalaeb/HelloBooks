@@ -15,18 +15,11 @@ import android.net.Uri;
 
 public class BookContentProvider extends ContentProvider {
 
-   DBHelper dbHelper;
-
    private SQLiteDatabase database;
-
 
    @Override
    public boolean onCreate() {
-      Context context = getContext();
-      dbHelper = new DBHelper(context);
-      // permissions to be writable
-      database = dbHelper.getWritableDatabase();
-
+      database = new DBInstance(getContext()).getWritableDatabase();
       return database != null;
    }
 
@@ -45,7 +38,6 @@ public class BookContentProvider extends ContentProvider {
    public Uri insert(Uri uri, ContentValues values) {
       long row = database.insert(TABLE_NAME, "", values);
 
-      // If record is added successfully
       if (row > 0) {
          Uri newUri = ContentUris.withAppendedId(CONTENT_URI, row);
          getContext().getContentResolver().notifyChange(newUri, null);
@@ -70,9 +62,9 @@ public class BookContentProvider extends ContentProvider {
       throw new UnsupportedOperationException("GetType not supported");
    }
 
-   private static class DBHelper extends SQLiteOpenHelper {
+   private static class DBInstance extends SQLiteOpenHelper {
 
-      public DBHelper(Context context) {
+      public DBInstance(Context context) {
          super(context, DATABASE_NAME, null, DATABASE_VERSION);
       }
 

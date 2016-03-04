@@ -1,4 +1,4 @@
-package murex.dojo.hellobooks.app;
+package murex.dojo.hellobooks.observers;
 
 import static murex.dojo.hellobooks.app.Constants.LIKE_BROADCAST;
 import static murex.dojo.hellobooks.app.Constants.NAME;
@@ -9,10 +9,10 @@ import java.util.Observer;
 import android.content.Context;
 import android.content.Intent;
 
-public class BroacastObserver implements Observer {
+public class BroadcastObserver implements Observer {
    private Context context;
 
-   public BroacastObserver(Context context) {
+   public BroadcastObserver(Context context) {
       this.context = context;
    }
 

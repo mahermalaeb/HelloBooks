@@ -1,4 +1,4 @@
-package murex.dojo.hellobooks.app;
+package murex.dojo.hellobooks.observers;
 
 import static murex.dojo.hellobooks.app.Constants.CONTENT_URI;
 import static murex.dojo.hellobooks.app.Constants.NAME;
