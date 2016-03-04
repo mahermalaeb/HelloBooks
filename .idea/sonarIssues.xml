@@ -113,6 +113,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/murex/dojo/hellobooks/app/BookContentProvider.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/murex/dojo/hellobooks/app/BookDetails.java">
           <value>
             <set />
@@ -169,6 +174,21 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/murex/dojo/hellobooks/app/TimerService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/murex/dojo/hellobooks/providers/BooksProvider.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/murex/dojo/hellobooks/providers/ProxyDisabledProvider.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/murex/dojo/hellobooks/providers/ProxyEnabledProvider.java">
           <value>
             <set />
           </value>

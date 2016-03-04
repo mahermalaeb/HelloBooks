@@ -13,7 +13,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 
-public class BookProvider extends ContentProvider {
+public class BookContentProvider extends ContentProvider {
 
    DBHelper dbHelper;
 

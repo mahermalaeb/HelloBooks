@@ -2,7 +2,7 @@ package murex.dojo.hellobooks.app;
 
 import static murex.dojo.hellobooks.app.Constants.NAME;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import com.bumptech.glide.Glide;
 
@@ -18,9 +18,15 @@ import android.widget.TextView;
 
 public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder> implements View.OnClickListener {
 
-   private final ArrayList<Book> booksList;
+   private final List<Book> booksList;
    private final Context context;
    private final RecyclerView mRecyclerView;
+
+   public BooksAdapter(List<Book> booksList, Context context, RecyclerView mRecyclerView) {
+      this.booksList = booksList;
+      this.context = context;
+      this.mRecyclerView = mRecyclerView;
+   }
 
    @Override
    public void onClick(View view) {
@@ -34,12 +40,6 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder> 
       detailsIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
       detailsIntent.putExtra(NAME, bookName);
       context.startActivity(detailsIntent);
-   }
-
-   public BooksAdapter(ArrayList<Book> myBooksList, Context context, RecyclerView mRecyclerView) {
-      this.booksList = myBooksList;
-      this.context = context;
-      this.mRecyclerView = mRecyclerView;
    }
 
    @Override

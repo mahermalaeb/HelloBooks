@@ -21,4 +21,8 @@ public class Constants {
    public static final Uri CONTENT_URI = Uri.parse(URL);
 
    public static final String BOOKS_URL = "https://www.googleapis.com/books/v1/volumes?q=java&key=AIzaSyBN8xJKNTqENR17M7uyAgBocqYHXY1eYi8";
+   public static final String RECEIVER_TAG = "receiverTag";
+   public static final String SERVICE_TAG = "ServiceTag";
+   public static final int BOOKS_FETCHED_RESULT_CODE = 99;
+   public static final int DEFAULT_RESULT_CODE = 0;
 }

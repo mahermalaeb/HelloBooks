@@ -13,7 +13,7 @@ public class MyResultReceiver extends ResultReceiver {
    }
 
    public interface Receiver {
-      void onReceiveResult(int resultCode, Bundle resultData);
+      void onReceiveResult(int resultCode, Object resultData);
    }
 
    public void setReceiver(Receiver receiver) {

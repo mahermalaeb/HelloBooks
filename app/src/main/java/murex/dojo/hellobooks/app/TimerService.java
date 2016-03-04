@@ -1,5 +1,8 @@
 package murex.dojo.hellobooks.app;
 
+import static murex.dojo.hellobooks.app.Constants.RECEIVER_TAG;
+import static murex.dojo.hellobooks.app.Constants.SERVICE_TAG;
+
 import android.app.IntentService;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,16 +18,16 @@ public class TimerService extends IntentService {
    @Override
    protected void onHandleIntent(Intent intent) {
 
-      final ResultReceiver rec = intent.getParcelableExtra("receiverTag");
+      final ResultReceiver rec = intent.getParcelableExtra(RECEIVER_TAG);
 
-      Thread timer = new Thread() {
+      new Thread() {
          int i;
 
          @Override
          public void run() {
             while (true) {
                Bundle b = new Bundle();
-               b.putString("ServiceTag", String.valueOf(i++));
+               b.putString(SERVICE_TAG, String.valueOf(i++));
                rec.send(0, b);
                try {
                   sleep(1000);
@@ -33,8 +36,7 @@ public class TimerService extends IntentService {
                }
             }
          }
-      };
-      timer.start();
+      }.start();
 
 
    }
