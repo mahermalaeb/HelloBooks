@@ -6,61 +6,77 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements MyResultReceiver.Receiver {
 
-    private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
-    private ArrayList<Book> booksList = new ArrayList<Book>();
+   private RecyclerView mRecyclerView;
+   private RecyclerView.Adapter mAdapter;
+   private RecyclerView.LayoutManager mLayoutManager;
+   private ArrayList<Book> booksList = new ArrayList<Book>();
+   public MyResultReceiver mReceiver;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+   @Override
+   protected void onCreate(Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
+      setContentView(R.layout.activity_main);
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+      mReceiver = new MyResultReceiver(new Handler());
+      mReceiver.setReceiver(this);
 
-        // use a linear layout manager
-        mLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(mLayoutManager);
+      Intent i = new Intent(this, TimerService.class);
+      i.putExtra("receiverTag", mReceiver);
+      startService(i);
 
-        // Instantiate the RequestQueue.
-        RequestQueue queue = Volley.newRequestQueue(this);
+      mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
 
-        booksList.add(new Book("Book1", "url1"));
-        booksList.add(new Book("Book2", "url2"));
+      // use a linear layout manager
+      mLayoutManager = new LinearLayoutManager(this);
+      mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mAdapter = new BooksAdapter(booksList, getApplicationContext(), mRecyclerView);
-        mRecyclerView.setAdapter(mAdapter);
+      // Instantiate the RequestQueue.
+      RequestQueue queue = Volley.newRequestQueue(this);
 
-        String url = "https://www.googleapis.com/books/v1/volumes?q=java&key=AIzaSyBN8xJKNTqENR17M7uyAgBocqYHXY1eYi8";
-        //        // Request a string response from the provided URL.
-        //        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-        //                new Response.Listener<String>() {
-        //                    @Override
-        //                    public void onResponse(String response) {
-        //                        try {
-        //                            booksList = BooksJsonParser.parseJsonStringIntoBooksList(response);
-        //                            mAdapter = new BooksAdapter(booksList,getApplicationContext());
-        //                            mRecyclerView.setAdapter(mAdapter);
-        //
-        //                        } catch (JSONException e) {
-        //                            e.printStackTrace();
-        //                        }
-        //                    }
-        //                }, new Response.ErrorListener() {
-        //            @Override
-        //            public void onErrorResponse(VolleyError error) {
-        //
-        //            }
-        //
-        //        });
-        //        // Add the request to the RequestQueue.
-        //        queue.add(stringRequest);
-    }
+      booksList.add(new Book("Book1", "url1"));
+      booksList.add(new Book("Book2", "url2"));
 
+      mAdapter = new BooksAdapter(booksList, getApplicationContext(), mRecyclerView);
+      mRecyclerView.setAdapter(mAdapter);
+
+      String url = "https://www.googleapis.com/books/v1/volumes?q=java&key=AIzaSyBN8xJKNTqENR17M7uyAgBocqYHXY1eYi8";
+      //        // Request a string response from the provided URL.
+      //        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+      //                new Response.Listener<String>() {
+      //                    @Override
+      //                    public void onResponse(String response) {
+      //                        try {
+      //                            booksList = BooksJsonParser.parseJsonStringIntoBooksList(response);
+      //                            mAdapter = new BooksAdapter(booksList,getApplicationContext());
+      //                            mRecyclerView.setAdapter(mAdapter);
+      //
+      //                        } catch (JSONException e) {
+      //                            e.printStackTrace();
+      //                        }
+      //                    }
+      //                }, new Response.ErrorListener() {
+      //            @Override
+      //            public void onErrorResponse(VolleyError error) {
+      //
+      //            }
+      //
+      //        });
+      //        // Add the request to the RequestQueue.
+      //        queue.add(stringRequest);
+   }
+
+
+   @Override
+   public void onReceiveResult(int resultCode, Bundle resultData) {
+      Log.d("got", "received result from Service=" + resultData.getString("ServiceTag"));
+   }
 }

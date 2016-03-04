@@ -25,7 +25,7 @@
         <provider android:name=".BookProvider"
                   android:authorities="murex.dojo.hellobooks.app">
         </provider>
-
+        <service android:name=".TimerService"/>
     </application>
 
 </manifest>
