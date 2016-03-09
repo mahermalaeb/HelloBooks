@@ -18,12 +18,142 @@
             <set />
           </value>
         </entry>
+        <entry key="D:/m2repository/murex/pop/pop-root/1.0-SNAPSHOT/pop-root-1.0-SNAPSHOT.pom">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/commons/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-commons/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-commons/src/main/java/murex/imdb/ImmediateFuture.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-commons/src/main/java/murex/imdb/LongToken.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-commons/src/main/java/murex/pop/commons/FutureHelper.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-commons/src/main/java/murex/pop/commons/ReferenceCounter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-commons/src/main/java/murex/pop/commons/process/IPCUtils.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-commons/src/main/java/murex/pop/commons/process/JavaProcess.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-commons/src/main/java/murex/pop/commons/process/ManagedProcess.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-commons/src/main/java/murex/pop/commons/process/Process.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-commons/src/main/java/murex/pop/commons/process/VMOptions.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-commons/src/main/java/murex/pop/commons/process/VMOptionsFactory.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-commons/src/main/java/murex/pop/commons/process/Wrapper.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-commons/src/test/java/murex/imdb/commons/UncheckedThrowTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-commons/src/test/java/murex/pop/commons/ReferenceCounterTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-commons/src/test/java/murex/pop/commons/process/SocketTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-commons/src/test/java/murex/pop/commons/process/VMOptionsTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-driver/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-driver/src/test/java/murex/imdb/driver/jdbc/AbstractBackendMock.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-memory-benchmark/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-memory-benchmark/src/test/java/murex/jamm/ObjectExplorerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="D:/pop/src/java/imdb/imdb-server/src/main/java/murex/imdb/server/jdbc/server/DefaultOptimizationsFactory.java">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-server/src/main/java/murex/imdb/server/queries/executors/InsertValuesTransformer.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-server/src/main/java/murex/imdb/server/queries/executors/MergeIntoAnalyzer.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-server/src/main/java/murex/imdb/server/queries/executors/UpdateExecutor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="D:/pop/src/java/imdb/imdb-server/src/test/java/murex/imdb/server/jdbc/server/DefaultOptimizationsFactoryTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-server/src/test/java/murex/imdb/server/jdbc/server/IMDBServerProcess.java">
           <value>
             <set />
           </value>
@@ -38,12 +168,32 @@
             <set />
           </value>
         </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-shared/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="D:/pop/src/java/imdb/imdb-shared/src/main/java/PlanPicker.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="D:/pop/src/java/imdb/imdb-shared/src/main/java/murex/imdb/shared/jdbc/rpc/JdbcConnectionHandler.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-shared/src/main/java/murex/imdb/shared/query/ast/nodes/visitors/Expressions.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-shared/src/main/java/murex/imdb/shared/query/ast/transformation/translators/ExpressionResolver.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/imdb-shared/src/main/java/murex/imdb/shared/query/ast/transformation/translators/MapFunctionsTranslator.java">
           <value>
             <set />
           </value>
@@ -89,6 +239,251 @@
           </value>
         </entry>
         <entry key="D:/pop/src/java/imdb/imdb-shared/src/test/java/murex/imdb/shared/query/formal/optimizations/statistics/InputJoinStatsTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/integration-tests/imdb-service-test/src/test/java/murex/integration/test/ImdbServiceActivatorTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/integration-tests/imdb-service-test/src/test/java/murex/integration/test/OsgiTests.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/pop/src/java/imdb/integration-tests/imdb-use-cases/src/test/java/murex/imdb/h2/H2ServerProcess.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../DojoBooks/.idea/sonarIssues.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../DojoBooks/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../DojoBooks/app/src/main/AndroidManifest.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../DojoBooks/app/src/main/java/murex/dojo/dojobooks/app/Book.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../DojoBooks/app/src/main/java/murex/dojo/dojobooks/app/BookAdapter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../DojoBooks/app/src/main/java/murex/dojo/dojobooks/app/BookContentProvider.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../DojoBooks/app/src/main/java/murex/dojo/dojobooks/app/BookProvider.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../DojoBooks/app/src/main/java/murex/dojo/dojobooks/app/BooksProvider.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../DojoBooks/app/src/main/java/murex/dojo/dojobooks/app/MainActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../DojoBooks/app/src/main/java/murex/dojo/dojobooks/app/MyResultReceiver.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../DojoBooks/app/src/main/java/murex/dojo/dojobooks/app/ProxyDisabledBookProvider.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../DojoBooks/app/src/main/java/murex/dojo/dojobooks/app/ProxyEnabledBookProvider.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../DojoBooks/app/src/main/java/murex/dojo/dojobooks/app/Receiver.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../DojoBooks/app/src/main/java/murex/dojo/dojobooks/app/TimerService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../DojoBooks/app/src/main/res/layout/activity_main.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../DojoBooks/app/src/main/res/layout/item.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../DojoBooks/app/src/main/res/values/styles.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Helllobooks1/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Helllobooks1/app/build/intermediates/manifests/full/debug/AndroidManifest.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Helllobooks1/app/src/main/AndroidManifest.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Helllobooks1/app/src/main/java/murex/dojo/helllobooks1/app/MainActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Helllobooks1/app/src/main/res/layout/activity_main.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Helllobooks1/app/src/main/res/values/styles.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Helllobooks1/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HelloBooks2/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HelloBooks2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.0/res/values-v21/values-v21.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HelloBooks2/app/src/main/AndroidManifest.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HelloBooks2/app/src/main/java/murex/dojo/hellobooks2/app/Book.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HelloBooks2/app/src/main/java/murex/dojo/hellobooks2/app/BookAdapter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HelloBooks2/app/src/main/java/murex/dojo/hellobooks2/app/BookContentProvider.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HelloBooks2/app/src/main/java/murex/dojo/hellobooks2/app/BookDetails.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HelloBooks2/app/src/main/java/murex/dojo/hellobooks2/app/BooksJsonParser.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HelloBooks2/app/src/main/java/murex/dojo/hellobooks2/app/BroadCastObserver.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HelloBooks2/app/src/main/java/murex/dojo/hellobooks2/app/Constants.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HelloBooks2/app/src/main/java/murex/dojo/hellobooks2/app/ContentProviderObserver.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HelloBooks2/app/src/main/java/murex/dojo/hellobooks2/app/MainActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HelloBooks2/app/src/main/java/murex/dojo/hellobooks2/app/MyResultReceiver.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HelloBooks2/app/src/main/java/murex/dojo/hellobooks2/app/Receiver.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HelloBooks2/app/src/main/java/murex/dojo/hellobooks2/app/TimerService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HelloBooks2/app/src/main/java/murex/dojo/hellobooks2/providers/BookProvider.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HelloBooks2/app/src/main/java/murex/dojo/hellobooks2/providers/ProxyDisabledBookProvider.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HelloBooks2/app/src/main/java/murex/dojo/hellobooks2/providers/ProxyEnabledBookProvider.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HelloBooks2/app/src/main/res/layout/activity_book_details.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HelloBooks2/app/src/main/res/layout/activity_main.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HelloBooks2/app/src/main/res/layout/list_item.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HelloBooks2/app/src/main/res/values/styles.xml">
           <value>
             <set />
           </value>
@@ -219,6 +614,96 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../patterns/samples/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../patterns/samples/src/main/java/Device.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../patterns/samples/src/main/java/DeviceDecorator.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../patterns/samples/src/main/java/Fan.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../patterns/samples/src/main/java/LightDecorator.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../patterns/samples/src/main/java/Powered.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../patterns/samples/src/main/java/SoundDecorator.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../patterns/samples/src/main/java/TurnDecorator.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../patterns/samples/src/main/java/gof/Device.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../patterns/samples/src/main/java/gof/DeviceDecorator.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../patterns/samples/src/main/java/gof/Fan.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../patterns/samples/src/main/java/gof/LightDecorator.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../patterns/samples/src/main/java/gof/SoundDecorator.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../patterns/samples/src/main/java/gof/TurnDecorator.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../patterns/samples/src/main/java/school/Fan.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../patterns/samples/src/test/java/DeviceTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../patterns/samples/src/test/java/gof/DeviceTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../patterns/samples/src/test/java/school/FanTest.java">
           <value>
             <set />
           </value>

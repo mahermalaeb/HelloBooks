@@ -19,8 +19,8 @@ import android.widget.ProgressBar;
 
 public class MainActivity extends Activity implements MyResultReceiver.Receiver {
 
-   public static boolean PROXY_ENABLED = false;
-   RecyclerView mRecyclerView;
+   public static boolean PROXY_ENABLED = true;
+   private RecyclerView mRecyclerView;
 
    @Override
    protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,7 @@ public class MainActivity extends Activity implements MyResultReceiver.Receiver 
    private void setupRecyclerView() {
       mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
       mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-      booksProvider(this).fetchBooks();
+      booksProvider().fetchBooks(this,this);
    }
 
    @Override

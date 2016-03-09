@@ -72,7 +72,6 @@ public class BookDetails extends Activity {
          } while (c.moveToNext());
          Toast.makeText(this, result, LENGTH_LONG).show();
       }
-
    }
 
    public void close(View view) {
